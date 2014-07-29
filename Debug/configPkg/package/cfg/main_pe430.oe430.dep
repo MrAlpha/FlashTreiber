@@ -1,0 +1,9 @@
+package/cfg/main_pe430.oe430: package/cfg/main_pe430.c D:/Programme/CCS6/xdctools_3_30_03_47_core/packages/xdc/std.h D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include/stdarg.h D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include/stddef.h D:/Programme/CCS6/grace_3_00_01_59/packages/ti/targets/msp430/elf/std.h D:/Programme/CCS6/grace_3_00_01_59/packages/ti/targets/select.h D:/Programme/CCS6/grace_3_00_01_59/packages/ti/targets/std.h D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include/stdint.h 
+package/cfg/main_pe430.c:
+D:/Programme/CCS6/xdctools_3_30_03_47_core/packages/xdc/std.h:
+D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include/stdarg.h:
+D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include/stddef.h:
+D:/Programme/CCS6/grace_3_00_01_59/packages/ti/targets/msp430/elf/std.h:
+D:/Programme/CCS6/grace_3_00_01_59/packages/ti/targets/select.h:
+D:/Programme/CCS6/grace_3_00_01_59/packages/ti/targets/std.h:
+D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include/stdint.h:
