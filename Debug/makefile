@@ -128,7 +128,7 @@ all: FlashTreiber.out
 FlashTreiber.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
-	"D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/bin/cl430" -vmsp --abi=eabi -Ooff --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"FlashTreiber.map" --heap_size=80 --stack_size=80 -i"D:/Programme/CCS6/ccsv6/ccs_base/msp430/include" -i"D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/lib" -i"D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="FlashTreiber_linkInfo.xml" --rom_model -o "FlashTreiber.out" $(ORDERED_OBJS)
+	"D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/bin/cl430" -vmsp --abi=eabi -O0 --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"FlashTreiber.map" --heap_size=80 --stack_size=80 -i"D:/Programme/CCS6/ccsv6/ccs_base/msp430/include" -i"D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/lib" -i"D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="FlashTreiber_linkInfo.xml" --rom_model -o "FlashTreiber.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

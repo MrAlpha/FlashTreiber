@@ -1,5 +1,5 @@
 # optional compiler flags
-CCOPTS ?= -vmsp --abi=eabi -Ooff --include_path="D:/Programme/CCS6/ccsv6/ccs_base/msp430/include" --include_path="D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include" --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal   -qq -pdsw225 
+CCOPTS ?= -vmsp --abi=eabi -O0 --include_path="D:/Programme/CCS6/ccsv6/ccs_base/msp430/include" --include_path="D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include" --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal   -qq -pdsw225 
 
 # required C preprocessor flags
 #    compiler   headers: "D:/Programme/CCS6/ccsv6/tools/compiler/msp430_4.3.3/include"

@@ -27,16 +27,23 @@ int main(void)
     unsigned char check[64]={0};
     unsigned char pre[64]={0};
 
+    unsigned char bar=0;
     long foo;
     for(foo=0; foo<64; foo++){
-    	payload[foo]=1;
+    	bar=1^bar;
+    	payload[foo]=bar;
     }
 
+    eraseFlash();
     readData(0,pre,64);
-    eraseSector(0);
-//    eraseFlash();
+    writeData(0,payload,64);
 
-//    writeData(0,payload,64);
+    readData(0,pre,64);
+
+//    eraseSector(0);
+
+
+    writeData(0,payload,64);
     readData(0,check,64);
 
 

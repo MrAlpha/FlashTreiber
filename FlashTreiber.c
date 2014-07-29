@@ -17,7 +17,8 @@
  */
 void spiWrite(unsigned char Data) {
 	UCB0TXBUF = Data;
-	while (!(IFG2 & UCB0TXIFG))
+	delay(1);					//<-This made the difference
+	while (!(IFG2 & UCB0TXIFG)) _NOP()
 		;
 }
 
@@ -27,7 +28,7 @@ void spiWrite(unsigned char Data) {
  */
 unsigned char spiRead(unsigned char data) {
 	UCB0TXBUF = data;
-	while ((UCB0STAT & UCBUSY))
+	while ((UCB0STAT & UCBUSY)) _NOP()
 		;
 	data = UCB0RXBUF;
 	return data;
@@ -58,14 +59,15 @@ unsigned char checkWriteEnable() {
 		return 0;
 }
 
-void setWriteEnable(){
+void setWriteEnable(){ /////WHAT IS WRONG?
 	do{
-		delay(5);
+		//delay(5);
 		setCSlow();
 		spiWrite(WREN);
 		setCShigh();
-		delay(5);
-	}while(!(checkWriteEnable()));
+		//delay(5);
+		_NOP();_NOP();_NOP();_NOP();_NOP();	//<- mayby this made the difference
+	}while(!checkWriteEnable());
 }
 
 unsigned char getStatusRegister(){
@@ -80,6 +82,7 @@ unsigned char getStatusRegister(){
 unsigned char getFlashBusy(){
 	unsigned char status=0;
 	status=getStatusRegister();
+	delay(1);
 	if((status & WIP)== WIP){
 		return 1;
 	}
@@ -110,6 +113,7 @@ void readData(unsigned long flashAddress, unsigned char *recive, unsigned long b
 
 	setCSlow();
 	spiWrite(FREAD);
+	delay(1);
 	sendFlashAddress(flashAddress);
 	spiWrite(0x00);
 
@@ -127,6 +131,7 @@ void writeData(unsigned long flashAddress, unsigned char *send, unsigned long by
 	while(getFlashBusy()) __no_operation();
 
 	setWriteEnable();
+	while(getFlashBusy()) __no_operation();
 
 	setCSlow();
 	spiWrite(PP);
@@ -146,12 +151,14 @@ void eraseSector(unsigned long flashAddress ) {
 	while( getFlashBusy()) _NOP();
 	// Setting Write Enable Latch bit
 	setWriteEnable();
-	while(getFlashBusy());
+	while(getFlashBusy()) __no_operation();
 	// Chip select go low to start a flash command
 	setCSlow();
+	delay(1);
 
 	//Write Sector Erase command = 0x20;
-	spiWrite( SE );
+	spiWrite(SE);
+	delay(1);
 
 	sendFlashAddress( flashAddress );
 
@@ -162,10 +169,12 @@ void eraseSector(unsigned long flashAddress ) {
 
 
 void eraseFlash(){
-	while(getFlashBusy());
+	while(getFlashBusy()) _NOP();
 
 	setWriteEnable();
 	setCSlow();
+	//spiWrite(WREN);
+	//delay(2);
 	spiWrite(CE);
 	setCShigh();
 

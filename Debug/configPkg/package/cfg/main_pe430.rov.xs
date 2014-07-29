@@ -197,7 +197,7 @@ __o = __obj[15]  // ti.targets.msp430.elf.MSP430/ccConfigOpts
 __o = __obj[16]  // ti.targets.msp430.elf.MSP430/ccOpts
     __o['$category'] = String(java.net.URLDecoder.decode('Struct', 'UTF-8'))
     __o['$name'] = String(java.net.URLDecoder.decode('ti.targets.msp430.elf.MSP430%2FccOpts', 'UTF-8'))
-    __o['prefix'] = String(java.net.URLDecoder.decode('-vmsp+--abi%3Deabi+-Ooff+--include_path%3D%22D%3A%2FProgramme%2FCCS6%2Fccsv6%2Fccs_base%2Fmsp430%2Finclude%22+--include_path%3D%22D%3A%2FProgramme%2FCCS6%2Fccsv6%2Ftools%2Fcompiler%2Fmsp430_4.3.3%2Finclude%22+--advice%3Apower%3Dall+-g+--define%3D__MSP430G2553__+--diag_warning%3D225+--display_error_number+--diag_wrap%3Doff+--printf_support%3Dminimal+++-qq+-pdsw225', 'UTF-8'))
+    __o['prefix'] = String(java.net.URLDecoder.decode('-vmsp+--abi%3Deabi+-O0+--include_path%3D%22D%3A%2FProgramme%2FCCS6%2Fccsv6%2Fccs_base%2Fmsp430%2Finclude%22+--include_path%3D%22D%3A%2FProgramme%2FCCS6%2Fccsv6%2Ftools%2Fcompiler%2Fmsp430_4.3.3%2Finclude%22+--advice%3Apower%3Dall+-g+--define%3D__MSP430G2553__+--diag_warning%3D225+--display_error_number+--diag_wrap%3Doff+--printf_support%3Dminimal+++-qq+-pdsw225', 'UTF-8'))
     __o['suffix'] = String(java.net.URLDecoder.decode('', 'UTF-8'))
 
 __o = __obj[17]  // ti.targets.msp430.elf.MSP430/compatibleSuffixes
